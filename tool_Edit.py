@@ -10,7 +10,7 @@ class VideoEditorApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Video Editor")
-        self.root.geometry("1200x700")
+        self.root.geometry("750x700")
 
         self.input_folder = ""
         self.output_folder = ""
