@@ -19,12 +19,12 @@ class VideoEditorApp:
         self.processing_thread = None
 
         # --- UI Elements ---
-        tk.Label(root, text="Input Folder:").grid(row=0, column=0, padx=5, pady=5, sticky="w")
+        tk.Label(root, text="Đường dẫn vào:").grid(row=0, column=0, padx=5, pady=5, sticky="w")
         self.input_folder_entry = tk.Entry(root, width=50, state="readonly")
         self.input_folder_entry.grid(row=0, column=1, padx=5, pady=5)
         tk.Button(root, text="Browse", command=self.browse_input_folder).grid(row=0, column=2, padx=5, pady=5)
 
-        tk.Label(root, text="Output Folder:").grid(row=1, column=0, padx=5, pady=5, sticky="w")
+        tk.Label(root, text="Đường dẫn ra:").grid(row=1, column=0, padx=5, pady=5, sticky="w")
         self.output_folder_entry = tk.Entry(root, width=50, state="readonly")
         self.output_folder_entry.grid(row=1, column=1, padx=5, pady=5)
         tk.Button(root, text="Browse", command=self.browse_output_folder).grid(row=1, column=2, padx=5, pady=5)
@@ -40,7 +40,7 @@ class VideoEditorApp:
 
         # Speed Control
         tk.Label(root, text="Speed:").grid(row=5, column=0, padx=5, pady=5, sticky="w")
-        self.speed_var = tk.StringVar(value="1.0") # Default to 1.0
+        self.speed_var = tk.StringVar(value="1.1") # Default to 1.0
         self.speed_options = [f"{i / 10:.1f}" for i in range(5, 21)]  # 0.5 to 2.0
         self.speed_menu = ttk.Combobox(root, textvariable=self.speed_var, values=self.speed_options, state="readonly",
                                        width=10)
@@ -413,7 +413,4 @@ class VideoEditorApp:
         messagebox.showinfo("Complete", "All videos have been processed.")
 
 
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = VideoEditorApp(root)
-    root.mainloop()
+
